@@ -1,0 +1,17 @@
+.parameter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .parameter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .small-icon {
+    width: 20px;  /* Adjust this value to make icons smaller or larger */
+    height: 20px;
+    object-fit: contain;
+  }
