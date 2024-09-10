@@ -118,8 +118,8 @@ function App() {
       <h1>Weather App</h1>
 
       <div className="tab-container">
-        <p className={`tab ${activeTab === 'user' ? 'active' : ''}`} onClick={handleUserWeather}>Your Weather</p>
-        <p className={`tab ${activeTab === 'search' ? 'active' : ''}`} onClick={() => setActiveTab('search')}>Search Weather</p>
+        <button className={`tab ${activeTab === 'user' ? 'active' : ''}`} onClick={handleUserWeather}>Your Weather</button>
+        <button className={`tab ${activeTab === 'search' ? 'active' : ''}`} onClick={() => setActiveTab('search')}>Search Weather</button>
       </div>
 
       <div className="weather-container">
