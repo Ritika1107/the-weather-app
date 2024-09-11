@@ -15,6 +15,10 @@ function App() {
   const [searchCity, setSearchCity] = useState('');
   const [activeTab, setActiveTab] = useState('user');
   const [favoriteLocations, setFavoriteLocations] = useState([]);
+<<<<<<< HEAD
+=======
+  const [addedFavorite, setAddedFavorite] = useState(null); // New state to track the added favorite
+>>>>>>> fa4f1aa (Added Favorites City Addition)
 
   useEffect(() => {
     const initApp = async () => {
@@ -64,6 +68,10 @@ function App() {
         const result = await addFavoriteLocation({ name: weatherData.name, country: weatherData.sys.country });
         if (result.success) {
           alert(result.message);
+<<<<<<< HEAD
+=======
+          setAddedFavorite({ name: weatherData.name, country: weatherData.sys.country }); // Set the added favorite
+>>>>>>> fa4f1aa (Added Favorites City Addition)
           await loadFavoriteLocations();
         } else {
           alert(result.message);
@@ -171,6 +179,14 @@ function App() {
               <button onClick={() => handleRemoveFavorite(location.id)}>Remove</button>
             </li>
           ))}
+<<<<<<< HEAD
+=======
+          {addedFavorite && ( // Display the added favorite
+            <li>
+              <span>{addedFavorite.name}, {addedFavorite.country}</span>
+            </li>
+          )}
+>>>>>>> fa4f1aa (Added Favorites City Addition)
         </ul>
       </div>
     </div>

@@ -6,7 +6,10 @@ const MAX_FAVORITES = 10;
 
 export const addFavoriteLocation = async (location) => {
   try {
+<<<<<<< HEAD
    
+=======
+>>>>>>> fa4f1aa (Added Favorites City Addition)
     const q = query(collection(db, COLLECTION_NAME), 
       where("name", "==", location.name), 
       where("country", "==", location.country)
@@ -36,7 +39,11 @@ export const getFavoriteLocations = async () => {
     return locations;
   } catch (error) {
     console.error("Error getting favorite locations: ", error);
+<<<<<<< HEAD
     return { success: false, message: "Error retrieving favorite locations" }; // Return error message instead of throwing
+=======
+    return []; // Return an empty array on error to avoid breaking the app
+>>>>>>> fa4f1aa (Added Favorites City Addition)
   }
 };
 
@@ -45,7 +52,14 @@ export const removeFavoriteLocation = async (id) => {
     await deleteDoc(doc(db, COLLECTION_NAME, id));
     return { success: true, message: "Location removed from favorites" };
   } catch (error) {
+<<<<<<< HEAD
     console.error("Error removing favorite location: ", error);
     return { success: false, message: "Error removing favorite location" };
   }
 };
+=======
+    console.error("Error removing favorite location:", error);
+    return { success: false, message: "Error removing favorite location" };
+  }
+};
+>>>>>>> fa4f1aa (Added Favorites City Addition)
